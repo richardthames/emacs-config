@@ -39,4 +39,7 @@
 ;
 ; Load Literate Emacs Config
 ;
+; Follow Symlinks
+(setq vc-follow-symlinks nil)
+; Load config
 (org-babel-load-file "~/.emacs.d/config.org")

@@ -1,6 +1,12 @@
 #+TITLE: Emacs Config
 #+AUTHOR: Richard Thames
 
+* General
+
+#+begin_src emacs-lisp
+  (setq default-directory "~/Documents/")
+#+end_src
+
 * Kaolin Aurora
 
 #+begin_src emacs-lisp
