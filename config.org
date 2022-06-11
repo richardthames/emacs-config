@@ -45,3 +45,13 @@
     (add-hook 'org-mode-hook
 	      (lambda () (org-bullets-mode 1))))
 #+end_src
+
+* Undo Tree
+
+#+begin_src emacs-lisp
+  (use-package undo-tree
+    :bind
+    ("C-x u" . undo-tree-visualize)
+    :config
+    (global-undo-tree-mode))
+#+end_src
