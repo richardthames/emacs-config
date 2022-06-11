@@ -1,0 +1,41 @@
+#+TITLE: Emacs Config
+#+AUTHOR: Richard Thames
+
+* Kaolin Aurora
+
+#+begin_src emacs-lisp
+  (use-package kaolin-themes
+    :config
+    (load-theme 'kaolin-aurora t)
+    ; Treat appearance as Dark Mode base on theme
+    (when (eq system-type 'darwin)
+      (add-to-list 'default-frame-alist '(ns-appearance . dark))))
+#+end_src
+
+* Magit
+
+#+begin_src emacs-lisp
+  (use-package magit
+    :bind
+    ("C-x g" . magit-status))
+#+end_src
+
+* Org
+
+** General
+
+#+begin_src emacs-lisp
+  (require 'org-tempo)
+  (setq org-startup-indented t)
+#+end_src
+
+** Bullets
+
+#+begin_src emacs-lisp
+  (use-package org-bullets
+    :if
+    (window-system)
+    :init
+    (add-hook 'org-mode-hook
+	      (lambda () (org-bullets-mode 1))))
+#+end_src

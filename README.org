@@ -1,0 +1,6 @@
+#+TITLE: README
+#+AUTHOR: Richard Thames
+
+This repo is my emacs config extracted from my [[https://github.com/richardthames/dotfiles][dotfiles repo]].
+
+To use this, clone then symlink =init.el= and =config.org= to =~/.emacs.d=.
