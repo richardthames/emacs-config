@@ -3,11 +3,22 @@
 
 * General
 
+Set the default directory to =~/Documents=.
+
 #+begin_src emacs-lisp
   (setq default-directory "~/Documents/")
 #+end_src
 
+Wrap text by default.
+
+#+begin_src emacs-lisp
+  (global-visual-line-mode 1)
+  (add-hook 'minibuffer-setup-hook (lambda () (visual-line-mode -1)))
+#+end_src
+
 * Kaolin Aurora
+
+Use the fantastic *Kaolin Aurora* theme from [[https://github.com/ogdenwebb/emacs-kaolin-themes][ogdenwebb/emacs-kaolin-themes]].
 
 #+begin_src emacs-lisp
   (use-package kaolin-themes
@@ -20,6 +31,8 @@
 
 * Magit
 
+Use [[https://magit.vc/][Magit!]]: /A Git Porcelain inside Emacs/. This is the first killer feature.
+
 #+begin_src emacs-lisp
   (use-package magit
     :bind
@@ -30,12 +43,21 @@
 
 ** General
 
+Add back removed functionality that allows =TAB= after =<s= or =<q= to insert source code or quote blocks, respectively.
+
 #+begin_src emacs-lisp
   (require 'org-tempo)
+#+end_src
+
+Use indentation for outlined section heirarchy.
+
+#+begin_src emacs-lisp
   (setq org-startup-indented t)
 #+end_src
 
 ** Bullets
+
+Use stylized bullets instead of n *'s for headings.
 
 #+begin_src emacs-lisp
   (use-package org-bullets
@@ -47,6 +69,8 @@
 #+end_src
 
 * Org Roam
+
+Configure =org-roam= while experimenting with it.
 
 #+begin_src emacs-lisp
   (use-package org-roam
@@ -69,6 +93,8 @@
 #+end_src
 
 * Undo Tree
+
+Use =undo-tree=. This is the second killer feature.
 
 #+begin_src emacs-lisp
   (use-package undo-tree
