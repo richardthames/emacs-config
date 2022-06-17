@@ -55,6 +55,12 @@ Use indentation for outlined section heirarchy.
   (setq org-startup-indented t)
 #+end_src
 
+Make followed links open in current buffer.
+
+#+begin_src emacs-lisp
+  (add-to-list 'org-link-frame-setup '(file . find-file))
+#+end_src
+
 ** Bullets
 
 Use stylized bullets instead of n *'s for headings.
