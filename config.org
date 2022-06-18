@@ -99,6 +99,7 @@ Configure =org-roam= while experimenting with it.
   (use-package org-roam
     :custom
     (org-roam-directory "~/Documents/wiki")
+    (org-roam-dailies-directory "log/")
     (org-roam-capture-templates
      '(("d" "Default" plain
         (file "~/Documents/wiki/_templates/DefaultTemplate.org")
@@ -108,10 +109,15 @@ Configure =org-roam= while experimenting with it.
         (file "~/Documents/wiki/_templates/ArticleTemplate.org")
         :if-new (file+head "${slug}.org" "#+TITLE: ${title}\n#+AUTHOR: Richard Thames\n#+DATE: %t\n\n\n")
         :unnarrowed t)))
+    (org-roam-dailies-capture-templates
+     '(("d" "default" entry "* %?"
+        :if-new (file+head "%<%Y-%m-%d>.org" "#+TITLE: %<%Y-%m-%d>\n#+AUTHOR: Richard Thames\n\n\n"))))
     :bind (("C-c n l" . org-roam-buffer-toggle)
            ("C-c n f" . org-roam-node-find)
            ("C-c n i" . org-roam-node-insert))
+    :bind-keymap ("C-c n d" . org-roam-dailies-map)
     :config
+    (require 'org-roam-dailies)
     (org-roam-setup))
 #+end_src
 
