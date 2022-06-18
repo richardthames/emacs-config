@@ -74,6 +74,23 @@ Use stylized bullets instead of n *'s for headings.
 	      (lambda () (org-bullets-mode 1))))
 #+end_src
 
+** Org Babel
+
+Add language support.
+
+#+begin_src emacs-lisp
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((js . t)
+     (python . t)))
+#+end_src
+
+Set Python command to =python3=.
+
+#+begin_src emacs-lisp
+  (setq org-babel-python-command "python3")
+#+end_src
+
 * Org Roam
 
 Configure =org-roam= while experimenting with it.
