@@ -130,5 +130,24 @@ Use =undo-tree=. This is the second killer feature.
     :bind
     ("C-x u" . undo-tree-visualize)
     :config
+    (setq undo-tree-auto-save-history nil)
     (global-undo-tree-mode))
 #+end_src
+
+* Prettier
+
+#+begin_src emacs-lisp
+  (use-package prettier-js
+    :custom
+    (prettier-js-args
+     '("--trailing-comma" "all"
+       "--semi" "false"
+       "--single-quote" "true"))
+    :init
+    (add-hook 'css-mode-hook 'prettier-js-mode)
+    (add-hook 'html-mode-hook 'prettier-js-mode)
+    (add-hook 'js-mode-hook 'prettier-js-mode)
+    (add-hook 'js2-mode-hook 'prettier-js-mode)
+    (add-hook 'web-mode-hook 'prettier-js-mode))
+#+end_src
+
